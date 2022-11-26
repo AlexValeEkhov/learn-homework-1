@@ -19,7 +19,24 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    age = input('Сколько вам лет?')
+    agefix = int("".join(c for c in age if  c.isdecimal())) # это нагуглил)
+
+    if agefix < 7:
+      result = 'Иди в сад! Детский.'
+    elif agefix < 18:
+      result = 'Пора в школу! И не забудь сменку.'
+    elif agefix < 24:
+      result = 'Теперь можно еще поучиться. В ВУЗе.'
+    elif agefix >= 24 and agefix < 65:
+      result = 'Да на тебе пахать можно! Работать!'
+    elif agefix >= 65 and agefix < 100:
+      result = 'Пенсия'
+    else:
+      result = 'Кто хочет жить вечно?'
+    print(result)
+
 
 if __name__ == "__main__":
     main()
+
