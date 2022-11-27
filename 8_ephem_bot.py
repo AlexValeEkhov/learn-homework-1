@@ -31,6 +31,7 @@ planets ={
     "jupiter": Jupiter(now()),
     "saturn": Saturn(now()),
     "uranus": Uranus(now()),
+    "neptune": Neptune(now()),
     "pluto": Pluto(now())
 }
 
