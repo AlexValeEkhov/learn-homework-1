@@ -22,10 +22,10 @@ def main(string1, string2):
     """
     answer = None    
     if type(string1) != str or type(string2) != str: 
-      answer = 0
+      answer = 0   
     elif string1 == string2:
       answer = 1
-    elif string1 != string2 and string2 =="learn":
+    elif string2 =="learn":
       answer = 3
     elif len(string1) > len(string2):
       answer = 2
