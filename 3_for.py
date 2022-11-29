@@ -17,7 +17,12 @@
 """
 
 
-
+def count_sum(sales):
+    sales_sum = 0
+    for sale in sales:
+      sales_sum += sale
+    
+    return sales_sum
     
 
 def main():
@@ -27,13 +32,6 @@ def main():
     {'product': 'Samsung Galaxy 21', 'items_sold': [343, 390, 238, 437, 214, 494, 441, 518, 212, 288, 272, 247]},
   ]
           
-  def count_sum(sales):
-    sales_sum = 0
-    for sale in sales:
-      sales_sum += sale
-    
-    return sales_sum
-
   total_sum = 0
   sum_avg = 0
 
@@ -44,7 +42,7 @@ def main():
     print(f'Среднее количество продаж {one_phone["product"]}: {phone_sum/len(one_phone["items_sold"])}')
     sum_avg += phone_sum/len(one_phone["items_sold"])
   print(f'Всего продаж: {total_sum}')
-  print(f'Среднее количество прродаж: {sum_avg/len(phones)}')
+  print(f'Среднее количество продаж: {sum_avg/len(phones)}')
 
     
 if __name__ == "__main__":
