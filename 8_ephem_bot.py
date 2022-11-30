@@ -1,8 +1,6 @@
 """
 Домашнее задание №1
-
 Использование библиотек: ephem
-
 * Установите модуль ephem
 * Добавьте в бота команду /planet, которая будет принимать на вход
   название планеты на английском, например /planet Mars
@@ -10,7 +8,6 @@
   название планеты (подсказка: используйте .split())
 * При помощи условного оператора if и ephem.constellation научите
   бота отвечать, в каком созвездии сегодня находится планета.
-
 """
 import logging
 from ephem import *
@@ -24,31 +21,35 @@ def greet_user(update, context):
     print('Вызван /start')
     update.message.reply_text('Привет, пользователь! Введи команду /planet и название планеты на английском, если хочешь узнать о них.')
 
-planets ={
-    "mercury": Mercury(now()),
-    "venus": Venus(now()),
-    "mars": Mars(now()),
-    "jupiter": Jupiter(now()),
-    "saturn": Saturn(now()),
-    "uranus": Uranus(now()),
-    "neptune": Neptune(now()),
-    "pluto": Pluto(now())
-}
 
 def talk_to_me(update, context):
     text = update.message.text
     print(text)
     update.message.reply_text(text)
 
-def planet_const(update, context):
+
+
+def planet_const(update, context): 
+
+    planets ={                      # Перенес словарь planets внутрь функции. 
+      "mercury": Mercury(now()),
+      "venus": Venus(now()),
+      "mars": Mars(now()),
+      "jupiter": Jupiter(now()),
+      "saturn": Saturn(now()),
+      "uranus": Uranus(now()),
+      "neptune": Neptune(now()),
+      "pluto": Pluto(now())
+      }
+  
     c = 0
     text = (update.message.text).lower()              
     find_planet = text.split()                 
     for word in find_planet:  
       for key in planets: 
-        if word == key: 
+        if word == key:
+          print(planets[f"{word}"]) # Результат вычисления планеты выводится в консоль
           const = constellation(planets[f"{word}"]) 
-          print(const)
           update.message.reply_text(f'Планета {(word).capitalize()} находится в созвездии {const}')
           c = 1
     if c == 0:         
