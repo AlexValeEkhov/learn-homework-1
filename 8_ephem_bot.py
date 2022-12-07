@@ -57,7 +57,7 @@ def planet_const(update, context):
 
 
 def main():
-    mybot = Updater("5751095837:AAGYZtVX1HEOvmKEggLT36DOHrY2qcz-3NU", use_context=True)
+    mybot = Updater("", use_context=True)
 
     dp = mybot.dispatcher
     dp.add_handler(CommandHandler('start', greet_user))
